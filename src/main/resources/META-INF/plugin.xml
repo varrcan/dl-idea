@@ -1,18 +1,19 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.varrcan.dlidea</id>
-    <name>dl-idea Template</name>
-    <vendor>varrcan</vendor>
+    <id>com.github.varrcan.dl</id>
+    <name>DL Tool</name>
+    <vendor email="support@varme.pw" url="https://github.com/varrcan/dl-idea">Sergey Voloshin</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <resource-bundle>messages.DlBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.varrcan.dlidea.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <statusBarWidgetFactory
+                implementation="com.github.varrcan.dl.widget.DlStatusBarWidgetFactory"
+                id="Dl.StatusBarWidgetFactory"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.varrcan.dlidea.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
 </idea-plugin>
