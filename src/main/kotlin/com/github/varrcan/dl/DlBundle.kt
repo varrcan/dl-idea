@@ -1,13 +1,13 @@
-package com.github.varrcan.dlidea
+package com.github.varrcan.dl
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls
 import org.jetbrains.annotations.PropertyKey
 
 @NonNls
-private const val BUNDLE = "messages.MyBundle"
+private const val BUNDLE = "messages.DlBundle"
 
-object MyBundle : DynamicBundle(BUNDLE) {
+object DlBundle : DynamicBundle(BUNDLE) {
 
     @JvmStatic
     fun message(@PropertyKey(resourceBundle = BUNDLE) key: String, vararg params: Any) =

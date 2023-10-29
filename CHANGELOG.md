@@ -1,6 +1,4 @@
-<!-- Keep a Changelog guide -> https://keepachangelog.com -->
-
-# dl-idea Changelog
+# DL Tool Changelog
 
 ## [Unreleased]
 ### Added

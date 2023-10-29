@@ -8,10 +8,21 @@
 
     <resource-bundle>messages.DlBundle</resource-bundle>
 
+    <actions>
+        <group id="DlToolGroup" popup="true" class="com.github.varrcan.dl.action.DlEngineActionGroup">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </group>
+    </actions>
+
     <extensions defaultExtensionNs="com.intellij">
+<!--        <applicationService serviceImplementation="com.github.varrcan.dl.DlState"/>-->
+        <notificationGroup id="Dl.NotificationGroup" displayType="BALLOON"/>
         <statusBarWidgetFactory
-                implementation="com.github.varrcan.dl.widget.DlStatusBarWidgetFactory"
-                id="Dl.StatusBarWidgetFactory"/>
+                id="Dl.StatusBarWidgetFactory"
+                order="before LineSeparator, after Position, before lineSeparatorWidget, after positionWidget"
+                implementation="com.github.varrcan.dl.ui.widget.DlStatusBarWidgetFactory"/>
+        <toolWindow id="DL Tool" anchor="right" canCloseContents="true" doNotActivateOnStart="true"
+                    factoryClass="com.github.varrcan.dl.ui.window.ConsolePanelToolBarFactory"/>
     </extensions>
 
     <applicationListeners>
